@@ -24,6 +24,9 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="stylesheet" type="text/css" href="/wp-content/themes/twentyfifteen/css/jquery.sidr.dark.css">
+	<script src="/wp-content/themes/twentyfifteen/js/jquery-2.1.4.min.js"></script>
+	<script src="/wp-content/themes/twentyfifteen/js/jquery.sidr.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -42,16 +45,19 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title">
+				<!--<a id="simple-menu" href="#sidr" style=""><img id="simple-menu-toggle" src="/wp-content/themes/twentyfifteen/images/menu_toggle_icon.png"></img></a>-->
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</h1>
 
 			<div class="search-toggle">
 				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
 			</div>
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
+			<nav id="primary-navigation" class="site-navigation primary-navigation toggled-on" role="navigation">
+				<button id="simple-menu" class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-menu sidr left', 'container_id' => 'sidr' ) ); ?>
 			</nav>
 		</div>
 
@@ -61,5 +67,13 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
+	
+	<script>
+	$(document).ready(function() {
+	  $('#simple-menu').sidr({
+	  		displace: false
+	  	});
+	});
+	</script>
 
 	<div id="main" class="site-main">

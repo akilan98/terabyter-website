@@ -978,9 +978,9 @@ span + .edit-link:before,
 	padding-top: 24px;
 }
 
-.primary-navigation.toggled-on {
-	padding: 72px 0 36px;
-}
+/*.primary-navigation.toggled-on {*/
+/*	padding: 72px 0 36px;*/
+/*}*/
 
 .primary-navigation .nav-menu {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);

@@ -5,7 +5,10 @@
  * Description: Migration tool for all your blog data. Import or Export your blog content with a single click.
  * Author: ServMask
  * Author URI: https://servmask.com/
- * Version: 2.0.4
+ * Version: 4.6
+ * Text Domain: all-in-one-wp-migration
+ * Domain Path: /languages
+ * Network: True
  *
  * Copyright (C) 2014 ServMask Inc.
  *
@@ -40,6 +43,15 @@ define( 'AI1WM_PATH', dirname( __FILE__ ) );
 
 // Plugin Url
 define( 'AI1WM_URL', plugins_url( '', __FILE__ ) );
+
+// Plugin Storage Url
+define( 'AI1WM_STORAGE_URL', plugins_url( 'storage', __FILE__ ) );
+
+// Plugin Backups Url
+define( 'AI1WM_BACKUPS_URL', content_url( 'ai1wm-backups', __FILE__ ) );
+
+// Themes Absolute Path
+define( 'AI1WM_THEMES_PATH', get_theme_root() );
 
 // include constants
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'constants.php';
